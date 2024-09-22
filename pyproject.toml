@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "backend"
+name = "telewebmanager"
 version = "0.1.0"
 description = ""
 authors = ["poligrafo <poligrafo888@gmail.com>"]
@@ -7,13 +7,20 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+python-telegram-bot = "^21.6"
+requests = "^2.32.3"
 fastapi = "^0.115.0"
 uvicorn = "^0.30.6"
 sqlalchemy = "^2.0.35"
 pydantic = "^2.9.2"
 alembic = "^1.13.2"
 pymysql = "^1.1.1"
+pydantic-settings = "^2.5.2"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+pytest-asyncio = "^0.24.0"
 
 [build-system]
 requires = ["poetry-core"]
