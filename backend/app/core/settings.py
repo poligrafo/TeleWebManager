@@ -1,17 +1,15 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from typing import List
 
 
-class Settings(BaseSettings):
-    DATABASE_URL: str
-    AUTH_TOKEN: str
-
-    # Настройки CORS
-    ALLOWED_HOSTS: List[str] = ["*"]
+class BackendSettings(BaseSettings):
+    database_url: str
+    secret_key: str
+    log_dir: str
 
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=".env.backend",
         case_sensitive=True,
     )
 
-settings = Settings()
+
+settings = BackendSettings()
