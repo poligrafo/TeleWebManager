@@ -1,0 +1,32 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env.backend
+    volumes:
+      - ./logs:/app/logs/backend
+    ports:
+      - "8000:8000"
+    restart: always
+
+  production_bot:
+    build:
+      context: .
+      dockerfile: Dockerfile.bots
+    env_file:
+      - .env.bots
+    volumes:
+      - ./logs:/app/logs/bots
+    restart: always
+
+  admin_bot:
+    build:
+      context: .
+      dockerfile: Dockerfile.bots
+    env_file:
+      - .env.bots
+    volumes:
+      - ./logs:/app/logs/bots
+    restart: always
